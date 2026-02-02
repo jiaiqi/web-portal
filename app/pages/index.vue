@@ -92,66 +92,135 @@ const quickLinks = [
 
 <template>
   <div>
-    <!-- Hero Section -->
-    <div class="mx-auto px-4 py-6 max-w-7xl lg:px-8 sm:px-6">
-      <div class="gap-6 grid grid-cols-1 lg:grid-cols-3">
-        <!-- Carousel -->
-        <div class="lg:col-span-2">
-          <NewsCarousel :slides="carouselSlides" />
-        </div>
-        <!-- Side Banner -->
-        <div class="space-y-4">
-          <div class="text-white p-6 rounded-lg flex h-36 items-center justify-center from-red-700 to-red-600 bg-gradient-to-r">
-            <div class="text-center">
-              <h3 class="text-lg font-bold mb-2">
-                百花迎春
-              </h3>
-              <p class="text-sm opacity-90">
-                中国文学艺术界春节大联欢
-              </p>
-            </div>
+    <!-- Hero Section - 轮播图 + 右侧快捷入口 -->
+    <div class="bg-white">
+      <div class="mx-auto px-4 py-6 max-w-7xl lg:px-8 sm:px-6">
+        <div class="gap-6 grid grid-cols-1 lg:grid-cols-3">
+          <!-- Carousel - 占2/3宽度 -->
+          <div class="lg:col-span-2">
+            <NewsCarousel :slides="carouselSlides" />
           </div>
-          <div class="text-white p-6 rounded-lg flex h-36 items-center justify-center from-amber-600 to-amber-500 bg-gradient-to-r">
-            <div class="text-center">
-              <h3 class="text-lg font-bold mb-2">
-                文艺进万家
-              </h3>
-              <p class="text-sm opacity-90">
-                健康你我他
-              </p>
+          <!-- 右侧快捷入口 -->
+          <div class="space-y-4">
+            <!-- 百花迎春 -->
+            <div class="group rounded-lg h-36 cursor-pointer relative overflow-hidden">
+              <img src="https://picsum.photos/400/200?random=100" alt="百花迎春" class="h-full w-full transition-transform duration-300 object-cover group-hover:scale-105">
+              <div class="flex items-center inset-0 justify-center absolute from-red-800/90 to-red-600/80 bg-gradient-to-r">
+                <div class="text-white text-center">
+                  <h3 class="text-xl font-bold mb-1">
+                    百花迎春
+                  </h3>
+                  <p class="text-sm opacity-90">
+                    中国文学艺术界春节大联欢
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- 文艺进万家 -->
+            <div class="group rounded-lg h-36 cursor-pointer relative overflow-hidden">
+              <img src="https://picsum.photos/400/200?random=101" alt="文艺进万家" class="h-full w-full transition-transform duration-300 object-cover group-hover:scale-105">
+              <div class="flex items-center inset-0 justify-center absolute from-amber-700/90 to-amber-500/80 bg-gradient-to-r">
+                <div class="text-white text-center">
+                  <h3 class="text-xl font-bold mb-1">
+                    文艺进万家
+                  </h3>
+                  <p class="text-sm opacity-90">
+                    健康你我他
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- News Section -->
-    <div class="mx-auto px-4 py-6 max-w-7xl lg:px-8 sm:px-6">
-      <div class="gap-6 grid grid-cols-1 lg:grid-cols-3">
-        <!-- Main News -->
-        <div class="space-y-6 lg:col-span-2">
-          <!-- Featured Banner -->
-          <div class="text-white p-6 rounded-lg from-red-800 to-red-600 bg-gradient-to-r">
-            <h2 class="text-xl font-bold mb-2">
-              深入学习贯彻党的二十届四中全会精神
-            </h2>
-            <p class="text-sm opacity-90">
-              全面贯彻落实习近平新时代中国特色社会主义思想
-            </p>
-          </div>
+    <!-- 学习贯彻党的二十大精神 Banner -->
+    <div class="mx-auto mb-6 px-4 max-w-7xl lg:px-8 sm:px-6">
+      <div class="text-white p-6 rounded-lg from-red-900 to-red-700 bg-gradient-to-r">
+        <h2 class="text-xl font-bold">
+          深入学习贯彻党的二十届四中全会精神
+        </h2>
+      </div>
+    </div>
 
-          <!-- News List -->
-          <NewsList title="要闻" :items="newsItems" more-link="/news" />
+    <!-- News Section -->
+    <div class="mx-auto px-4 pb-8 max-w-7xl lg:px-8 sm:px-6">
+      <div class="gap-6 grid grid-cols-1 lg:grid-cols-3">
+        <!-- Main News - 要闻 -->
+        <div class="lg:col-span-2">
+          <div class="p-6 rounded-lg bg-white">
+            <div class="mb-6 pb-3 border-b border-gray-200 flex items-center justify-between">
+              <div class="flex gap-2 items-center">
+                <span class="rounded bg-[#c41e3a] h-5 w-1" />
+                <h2 class="text-lg text-gray-800 font-bold">
+                  要闻
+                </h2>
+              </div>
+              <NuxtLink to="/news" class="text-sm text-gray-500 flex gap-1 transition-colors items-center hover:text-[#c41e3a]">
+                更多
+                <span class="text-xs">›</span>
+              </NuxtLink>
+            </div>
+            <div class="space-y-4">
+              <NuxtLink
+                v-for="item in newsItems"
+                :key="item.id"
+                :to="item.link"
+                class="group flex gap-4"
+              >
+                <div v-if="item.image" class="rounded flex-shrink-0 h-24 w-40 overflow-hidden">
+                  <img :src="item.image" :alt="item.title" class="h-full w-full transition-transform duration-300 object-cover group-hover:scale-105">
+                </div>
+                <div class="flex-1 min-w-0">
+                  <h3 class="text-sm text-gray-800 font-medium mb-2 transition-colors line-clamp-2 group-hover:text-[#c41e3a]">
+                    {{ item.title }}
+                  </h3>
+                  <p class="text-xs text-gray-400">
+                    {{ item.date }}
+                  </p>
+                </div>
+              </NuxtLink>
+            </div>
+          </div>
         </div>
 
         <!-- Sidebar -->
         <div class="space-y-6">
-          <NewsList title="基层动态" :items="localNewsItems" more-link="/news/local" />
+          <!-- 基层动态 -->
+          <div class="p-6 rounded-lg bg-white">
+            <div class="mb-4 pb-3 border-b border-gray-200 flex items-center justify-between">
+              <div class="flex gap-2 items-center">
+                <span class="rounded bg-[#c41e3a] h-5 w-1" />
+                <h2 class="text-lg text-gray-800 font-bold">
+                  基层动态
+                </h2>
+              </div>
+              <NuxtLink to="/news/local" class="text-sm text-gray-500 transition-colors hover:text-[#c41e3a]">
+                更多 ›
+              </NuxtLink>
+            </div>
+            <div class="space-y-3">
+              <NuxtLink
+                v-for="item in localNewsItems"
+                :key="item.id"
+                :to="item.link"
+                class="group block"
+              >
+                <h3 class="text-sm text-gray-700 transition-colors line-clamp-1 group-hover:text-[#c41e3a]">
+                  {{ item.title }}
+                </h3>
+                <p class="text-xs text-gray-400 mt-1">
+                  {{ item.date }}
+                </p>
+              </NuxtLink>
+            </div>
+          </div>
 
-          <!-- Quick Links -->
-          <div class="p-4 rounded-lg bg-white">
-            <div class="mb-4 flex gap-2 items-center">
-              <span class="rounded bg-red-700 h-5 w-1" />
+          <!-- 快捷入口 -->
+          <div class="p-6 rounded-lg bg-white">
+            <div class="mb-4 pb-3 border-b border-gray-200 flex gap-2 items-center">
+              <span class="rounded bg-[#c41e3a] h-5 w-1" />
               <h2 class="text-lg text-gray-800 font-bold">
                 快捷入口
               </h2>
@@ -161,7 +230,7 @@ const quickLinks = [
                 v-for="link in quickLinks"
                 :key="link.name"
                 :to="link.url"
-                class="text-sm text-gray-700 px-4 py-3 rounded-lg bg-gray-50 flex transition-colors items-center justify-center hover:text-red-700 hover:bg-red-50"
+                class="text-sm text-gray-700 px-4 py-3 rounded bg-gray-50 flex transition-all items-center justify-center hover:text-white hover:bg-[#c41e3a]"
               >
                 {{ link.name }}
               </NuxtLink>

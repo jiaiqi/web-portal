@@ -26,23 +26,34 @@ function isActive(path: string) {
   <header class="w-full">
     <!-- Top Logo Section -->
     <div class="bg-white">
-      <div class="mx-auto px-4 py-4 max-w-7xl lg:px-8 sm:px-6">
-        <div class="flex gap-4 items-center">
+      <div class="mx-auto px-4 max-w-7xl lg:px-8 sm:px-6">
+        <div class="py-4 flex items-center">
           <!-- Logo -->
-          <div class="flex gap-3 items-center">
-            <div class="rounded-full flex h-16 w-16 items-center justify-center from-red-500 to-red-700 bg-gradient-to-br">
-              <div class="rounded-full bg-white flex h-12 w-12 items-center justify-center">
-                <div class="rounded-full h-8 w-8 from-yellow-400 to-blue-500 via-red-500 bg-gradient-to-br" />
-              </div>
+          <div class="flex gap-4 items-center">
+            <!-- 中国文艺志愿者协会 LOGO - 彩色花瓣图案 -->
+            <div class="flex-shrink-0 h-20 w-20">
+              <svg viewBox="0 0 100 100" class="h-full w-full">
+                <!-- 中心圆 -->
+                <circle cx="50" cy="50" r="12" fill="#e60012" />
+                <!-- 彩色花瓣 -->
+                <ellipse cx="50" cy="22" rx="10" ry="16" fill="#e60012" />
+                <ellipse cx="50" cy="78" rx="10" ry="16" fill="#f39800" />
+                <ellipse cx="22" cy="50" rx="16" ry="10" fill="#009944" />
+                <ellipse cx="78" cy="50" rx="16" ry="10" fill="#0068b7" />
+                <ellipse cx="30" cy="30" rx="12" ry="12" fill="#8fc31f" transform="rotate(-45 30 30)" />
+                <ellipse cx="70" cy="30" rx="12" ry="12" fill="#00a0e9" transform="rotate(45 70 30)" />
+                <ellipse cx="30" cy="70" rx="12" ry="12" fill="#920783" transform="rotate(45 30 70)" />
+                <ellipse cx="70" cy="70" rx="12" ry="12" fill="#e4007f" transform="rotate(-45 70 70)" />
+              </svg>
             </div>
             <div class="flex flex-col">
-              <h1 class="text-2xl text-gray-800 tracking-wide font-bold">
+              <h1 class="text-3xl text-gray-900 tracking-wider font-bold">
                 中国文艺志愿者
               </h1>
-              <p class="text-xs text-gray-500 tracking-wider">
+              <p class="text-sm text-gray-500 tracking-widest mt-1">
                 CHINA LITERARY AND ART VOLUNTEERS
               </p>
-              <p class="text-xs text-gray-400">
+              <p class="text-xs text-gray-400 mt-0.5">
                 中国文学艺术界联合会主管 中国文艺志愿者协会主办
               </p>
             </div>
@@ -51,17 +62,17 @@ function isActive(path: string) {
       </div>
     </div>
 
-    <!-- Navigation Bar -->
-    <nav class="bg-red-700">
+    <!-- Navigation Bar - 深红色背景 -->
+    <nav class="bg-[#c41e3a]">
       <div class="mx-auto px-4 max-w-7xl lg:px-8 sm:px-6">
         <div class="flex h-12 items-center">
-          <div class="flex items-center space-x-1">
+          <div class="flex items-center">
             <NuxtLink
               v-for="item in navItems"
               :key="item.path"
               :to="item.path"
-              class="text-sm text-white font-medium px-5 py-3 transition-all duration-200 hover:bg-red-800"
-              :class="{ 'bg-red-800': isActive(item.path) }"
+              class="text-sm text-white px-6 py-3 transition-all duration-200 hover:bg-[#a01830]"
+              :class="{ 'bg-[#a01830]': isActive(item.path) }"
             >
               {{ item.name }}
             </NuxtLink>
