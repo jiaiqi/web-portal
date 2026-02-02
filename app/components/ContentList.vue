@@ -21,8 +21,8 @@ defineProps<{
         class="group px-6 py-4 flex transition-colors items-center justify-between hover:bg-gray-50"
       >
         <div class="flex flex-1 gap-3 min-w-0 items-center">
-          <span class="rounded-full bg-gray-300 flex-shrink-0 h-1.5 w-1.5 transition-colors group-hover:bg-[#c41e3a]" />
-          <h3 class="text-sm text-gray-700 truncate transition-colors group-hover:text-[#c41e3a]">
+          <span class="rounded-full bg-gray-300 flex-shrink-0 h-1.5 w-1.5 transition-colors group-hover:bg-[#cc0000]" />
+          <h3 class="text-sm text-gray-700 truncate transition-colors group-hover:text-[#cc0000]">
             {{ item.title }}
           </h3>
         </div>

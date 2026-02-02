@@ -194,12 +194,12 @@ const specialTopics = [
           <div class="p-6 rounded-lg bg-white">
             <div class="mb-6 pb-3 border-b border-gray-200 flex items-center justify-between">
               <div class="flex gap-2 items-center">
-                <span class="rounded bg-[#c41e3a] h-5 w-1" />
+                <span class="rounded bg-[#cc0000] h-5 w-1" />
                 <h2 class="text-lg text-gray-800 font-bold">
                   要闻
                 </h2>
               </div>
-              <NuxtLink to="/news" class="text-sm text-gray-500 flex gap-1 transition-colors items-center hover:text-[#c41e3a]">
+              <NuxtLink to="/news" class="text-sm text-gray-500 flex gap-1 transition-colors items-center hover:text-[#cc0000]">
                 更多
                 <span class="text-xs">›</span>
               </NuxtLink>
@@ -233,12 +233,12 @@ const specialTopics = [
           <div class="p-6 rounded-lg bg-white">
             <div class="mb-4 pb-3 border-b border-gray-200 flex items-center justify-between">
               <div class="flex gap-2 items-center">
-                <span class="rounded bg-[#c41e3a] h-5 w-1" />
+                <span class="rounded bg-[#cc0000] h-5 w-1" />
                 <h2 class="text-lg text-gray-800 font-bold">
                   协会概况
                 </h2>
               </div>
-              <NuxtLink to="/about" class="text-sm text-gray-500 transition-colors hover:text-[#c41e3a]">
+              <NuxtLink to="/about" class="text-sm text-gray-500 transition-colors hover:text-[#cc0000]">
                 更多 ›
               </NuxtLink>
             </div>
@@ -256,12 +256,12 @@ const specialTopics = [
           <div class="p-6 rounded-lg bg-white">
             <div class="mb-4 pb-3 border-b border-gray-200 flex items-center justify-between">
               <div class="flex gap-2 items-center">
-                <span class="rounded bg-[#c41e3a] h-5 w-1" />
+                <span class="rounded bg-[#cc0000] h-5 w-1" />
                 <h2 class="text-lg text-gray-800 font-bold">
                   基层动态
                 </h2>
               </div>
-              <NuxtLink to="/news/local" class="text-sm text-gray-500 transition-colors hover:text-[#c41e3a]">
+              <NuxtLink to="/news/local" class="text-sm text-gray-500 transition-colors hover:text-[#cc0000]">
                 更多 ›
               </NuxtLink>
             </div>
@@ -272,7 +272,7 @@ const specialTopics = [
                 :to="item.link"
                 class="group block"
               >
-                <h3 class="text-sm text-gray-700 transition-colors line-clamp-1 group-hover:text-[#c41e3a]">
+                <h3 class="text-sm text-gray-700 transition-colors line-clamp-1 group-hover:text-[#cc0000]">
                   {{ item.title }}
                 </h3>
                 <p class="text-xs text-gray-400 mt-1">
@@ -285,7 +285,7 @@ const specialTopics = [
           <!-- 快捷入口 -->
           <div class="p-6 rounded-lg bg-white">
             <div class="mb-4 pb-3 border-b border-gray-200 flex gap-2 items-center">
-              <span class="rounded bg-[#c41e3a] h-5 w-1" />
+              <span class="rounded bg-[#cc0000] h-5 w-1" />
               <h2 class="text-lg text-gray-800 font-bold">
                 快捷入口
               </h2>
@@ -295,7 +295,7 @@ const specialTopics = [
                 v-for="link in quickLinks"
                 :key="link.name"
                 :to="link.url"
-                class="text-sm text-gray-700 px-4 py-3 rounded bg-gray-50 flex transition-all items-center justify-center hover:text-white hover:bg-[#c41e3a]"
+                class="text-sm text-gray-700 px-4 py-3 rounded bg-gray-50 flex transition-all items-center justify-center hover:text-white hover:bg-[#cc0000]"
               >
                 {{ link.name }}
               </NuxtLink>
@@ -305,7 +305,7 @@ const specialTopics = [
           <!-- 专题活动 -->
           <div class="p-6 rounded-lg bg-white">
             <div class="mb-4 pb-3 border-b border-gray-200 flex gap-2 items-center">
-              <span class="rounded bg-[#c41e3a] h-5 w-1" />
+              <span class="rounded bg-[#cc0000] h-5 w-1" />
               <h2 class="text-lg text-gray-800 font-bold">
                 专题活动
               </h2>

@@ -63,7 +63,7 @@ function isActive(path: string) {
     </div>
 
     <!-- Navigation Bar - 深红色背景 -->
-    <nav class="bg-[#c41e3a]">
+    <nav class="bg-[#cc0000]">
       <div class="mx-auto px-4 max-w-7xl lg:px-8 sm:px-6">
         <div class="flex h-12 items-center">
           <div class="flex items-center">

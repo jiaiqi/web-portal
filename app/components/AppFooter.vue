@@ -30,7 +30,7 @@ const bottomLinks = [
 </script>
 
 <template>
-  <footer class="text-white bg-[#c41e3a]">
+  <footer class="text-white bg-[#cc0000]">
     <!-- Links Section -->
     <div class="mx-auto px-4 py-8 max-w-7xl lg:px-8 sm:px-6">
       <div class="flex flex-col gap-8 justify-between lg:flex-row">

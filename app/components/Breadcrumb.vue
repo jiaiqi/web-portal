@@ -13,7 +13,7 @@ defineProps<{
   <div class="border-b border-gray-200 bg-gray-50">
     <div class="mx-auto px-4 py-3 max-w-7xl lg:px-8 sm:px-6">
       <nav class="text-sm text-gray-500 flex items-center">
-        <NuxtLink to="/" class="transition-colors hover:text-[#c41e3a]">
+        <NuxtLink to="/" class="transition-colors hover:text-[#cc0000]">
           首页
         </NuxtLink>
         <template v-for="(item, index) in items" :key="index">
@@ -27,7 +27,7 @@ defineProps<{
           </NuxtLink>
           <span
             v-else
-            :class="{ 'text-[#c41e3a]': index === items.length - 1 }"
+            :class="{ 'text-[#cc0000]': index === items.length - 1 }"
           >
             {{ item.name }}
           </span>
