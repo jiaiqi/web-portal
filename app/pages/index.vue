@@ -53,6 +53,27 @@ const newsItems = [
     link: '/news/5',
     image: 'https://picsum.photos/200/120?random=8',
   },
+  {
+    id: 6,
+    title: '中国文联文艺支教项目招募志愿者公告',
+    date: '2024-01-10',
+    link: '/news/6',
+    image: 'https://picsum.photos/200/120?random=9',
+  },
+  {
+    id: 7,
+    title: '"到人民中去"文艺志愿服务主题活动在全国多地同步开展',
+    date: '2024-01-09',
+    link: '/news/7',
+    image: 'https://picsum.photos/200/120?random=10',
+  },
+  {
+    id: 8,
+    title: '中国文艺志愿者协会组织开展文艺培训志愿服务活动',
+    date: '2024-01-08',
+    link: '/news/8',
+    image: 'https://picsum.photos/200/120?random=11',
+  },
 ]
 
 const localNewsItems = [
@@ -87,6 +108,27 @@ const quickLinks = [
   { name: '活动报名', url: '/activities/register' },
   { name: '志愿者注册', url: '/volunteer/register' },
   { name: '资料下载', url: '/downloads' },
+]
+
+const specialTopics = [
+  {
+    id: 1,
+    title: '学习贯彻习近平文化思想',
+    image: 'https://picsum.photos/300/200?random=20',
+    link: '/topics/cultural-thought',
+  },
+  {
+    id: 2,
+    title: '百花迎春',
+    image: 'https://picsum.photos/300/200?random=21',
+    link: '/topics/baihua',
+  },
+  {
+    id: 3,
+    title: '文艺进万家',
+    image: 'https://picsum.photos/300/200?random=22',
+    link: '/topics/volunteer-service',
+  },
 ]
 </script>
 
@@ -187,6 +229,29 @@ const quickLinks = [
 
         <!-- Sidebar -->
         <div class="space-y-6">
+          <!-- 协会概况 -->
+          <div class="p-6 rounded-lg bg-white">
+            <div class="mb-4 pb-3 border-b border-gray-200 flex items-center justify-between">
+              <div class="flex gap-2 items-center">
+                <span class="rounded bg-[#c41e3a] h-5 w-1" />
+                <h2 class="text-lg text-gray-800 font-bold">
+                  协会概况
+                </h2>
+              </div>
+              <NuxtLink to="/about" class="text-sm text-gray-500 transition-colors hover:text-[#c41e3a]">
+                更多 ›
+              </NuxtLink>
+            </div>
+            <div class="text-sm text-gray-600 leading-relaxed">
+              <p class="mb-3 text-justify">
+                中国文艺志愿者协会（China Literary and Art Volunteers' Association，CLAVA）是由文艺志愿者、文艺志愿服务组织以及关心支持文艺志愿服务事业的单位和个人自愿组成的全国性、联合性、非营利性社会组织...
+              </p>
+              <NuxtLink to="/about" class="text-sm text-[#c41e3a] hover:underline">
+                查看详情 ›
+              </NuxtLink>
+            </div>
+          </div>
+
           <!-- 基层动态 -->
           <div class="p-6 rounded-lg bg-white">
             <div class="mb-4 pb-3 border-b border-gray-200 flex items-center justify-between">
@@ -234,6 +299,48 @@ const quickLinks = [
               >
                 {{ link.name }}
               </NuxtLink>
+            </div>
+          </div>
+
+          <!-- 专题活动 -->
+          <div class="p-6 rounded-lg bg-white">
+            <div class="mb-4 pb-3 border-b border-gray-200 flex gap-2 items-center">
+              <span class="rounded bg-[#c41e3a] h-5 w-1" />
+              <h2 class="text-lg text-gray-800 font-bold">
+                专题活动
+              </h2>
+            </div>
+            <div class="space-y-3">
+              <NuxtLink
+                v-for="topic in specialTopics"
+                :key="topic.id"
+                :to="topic.link"
+                class="group rounded-lg h-24 block relative overflow-hidden"
+              >
+                <img :src="topic.image" :alt="topic.title" class="h-full w-full transition-transform duration-300 object-cover group-hover:scale-105">
+                <div class="flex items-end inset-0 absolute from-black/70 to-transparent bg-gradient-to-t">
+                  <span class="text-sm text-white font-medium p-3">{{ topic.title }}</span>
+                </div>
+              </NuxtLink>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 学习贯彻习近平文化思想 专题横幅 -->
+    <div class="mx-auto mb-8 px-4 max-w-7xl lg:px-8 sm:px-6">
+      <div class="rounded-lg overflow-hidden">
+        <div class="h-32 relative">
+          <img src="https://picsum.photos/1200/300?random=30" alt="学习贯彻习近平文化思想" class="h-full w-full object-cover">
+          <div class="flex items-center inset-0 justify-center absolute from-red-800/95 to-red-600/90 bg-gradient-to-r">
+            <div class="text-white text-center">
+              <h2 class="text-2xl font-bold mb-2">
+                学习贯彻习近平文化思想
+              </h2>
+              <p class="text-sm opacity-90">
+                深入学习贯彻习近平新时代中国特色社会主义思想
+              </p>
             </div>
           </div>
         </div>
